@@ -56,7 +56,7 @@ def buildRegressionMatrix(pTrainVals,ord):
   # Return Matrix
   return polyMat
 
-def buildMultiresolutionMatrix(xTrain):
+def buildMultiresolutionMatrix(xTrain,maxOrder,maxDetailLevel):
   # Construct samples
   samples = uq.uqSamples(xTrain.shape[1])
   currSample = uq.stdVec()
@@ -67,7 +67,7 @@ def buildMultiresolutionMatrix(xTrain):
     samples.addOneSample(currSample)
 
   # Set Parameters for multiresolution basis
-  maxOrder                = 2
+  maxOrder                = maxOrder
   addLegendrePoly         = True
   addMW                   = True
   useBinaryPartitions     = False
@@ -76,9 +76,9 @@ def buildMultiresolutionMatrix(xTrain):
   useExactMW              = False
   mwQuadOrder             = 10
   measure                 = npToStdMat(np.ones((2*mwQuadOrder,1)))
-  print np.array(measure)
+  # print np.array(measure)
   maxColumns              = 0
-  maxDetailLevel          = 3
+  maxDetailLevel          = maxDetailLevel
 
   # Construct Multiresolution Matrix on samples
   mwMat = uq.uqMWMatrix(maxOrder,samples, \
