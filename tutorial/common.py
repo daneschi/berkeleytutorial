@@ -100,7 +100,10 @@ class tulipOLS:
     # Compute Train Error Vector
     trainError = qTrainVals - np.dot(npMat,coeffs)
     # Compute Noise Estimate 
-    noiseEstimate = np.sqrt(np.sum(np.square(trainError))/(npMat.shape[0]-npMat.shape[1]))
+    if(npMat.shape[0]-npMat.shape[1] > 0):
+      noiseEstimate = np.sqrt(np.sum(np.square(trainError))/(npMat.shape[0]-npMat.shape[1]))
+    else:
+      noiseEstimate = 0.0
     # OLS Estimate of the coefficient Covariance
     coeffsCov = noiseEstimate * noiseEstimate * np.linalg.inv(np.dot(npMat.transpose(),npMat))
     # Return
@@ -110,6 +113,7 @@ class tulipOLS:
 class tulipRVM:
   def __init__(self):
     pass
+
   def train(self,pMat,qTrainVals):
     # Eval functional value with simple function
     rhs = uq.stdVec()
@@ -131,7 +135,7 @@ class tulipRVM:
     # Print coefficients on screen
     coeffs = np.array(bcsCoeffs)
     # Return
-    return np.array(bcsCoeffs),np.array(coeffPrec),resNorm
+    return np.array(bcsCoeffs),np.array(coeffPrec),bcsReturn
 
 # Compute the Inverse Permutation of a given array given the partition indices
 def computeInversePermutation(idx,vector):
