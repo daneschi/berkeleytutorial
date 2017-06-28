@@ -36,5 +36,6 @@ questions or if you want dedicated computational infrastructure if
 http://beta.mybinder.org/ does not provide enough power or if you need a
 dedicated resource for your own research or workshop.
 
-http://research-it.berkeley.edu/brc
-http://research-it.berkeley.edu/services/cloud-computing-support
+- http://research-it.berkeley.edu/brc
+- http://research-it.berkeley.edu/services/cloud-computing-support
+
