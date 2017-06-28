@@ -14,7 +14,9 @@ The **tutorial** folder contains:
 
 **Step 2** In the **GitHub repo or URL** field enter: https://github.com/aculich/berkeleytutorial
 
-**Step 3** In the Jupyter notebook that opens, create a **New >> Terminal** and type `git clone https://github.com/aculich/berkeleytutorial`
+**Step 3** Click launch and wait for the `Dockerfile` to build and then it will launch a Jupyter Notebook
 
-**Step 4** Close the terminal and navigate to the `berkeleytutorial/tutorial` directory in the Jupyter interface.
+**Step 4** In the Jupyter notebook that opens, create a **New >> Terminal** and type `git clone https://github.com/aculich/berkeleytutorial`
+
+**Step 5** Close the terminal and navigate to the `berkeleytutorial/tutorial` directory in the Jupyter interface.
 
