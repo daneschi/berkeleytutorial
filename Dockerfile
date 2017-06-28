@@ -2,13 +2,13 @@ FROM ubuntu:16.04
 
 MAINTAINER Aaron Culich / Berkeley Research Computing <brc+aculich@berkeley.edu>
 
-## Please feel free to contact us at Berkeley Research Computing (BRC) if you
-## have questions or if you want dedicated computational infrastructure if
-## http://beta.mybinder.org/ does not provide enough power for your use by your
-## own research or workshop.
+## Please feel free to contact Berkeley Research Computing (BRC) if you have
+## questions or if you want dedicated computational infrastructure if
+## http://beta.mybinder.org/ does not provide enough power or if you need a
+## dedicated resource for your own research or workshop.
 ##
-##   http://research-it.berkeley.edu/brc
-##   http://research-it.berkeley.edu/services/cloud-computing-support
+## - http://research-it.berkeley.edu/brc
+## - http://research-it.berkeley.edu/services/cloud-computing-support
 ##
 ## Contact: Aaron Culich <brc+aculich@berkeley.edu>
 
@@ -66,6 +66,7 @@ RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 EXPOSE 8888
 USER jovyan
+
 
 ## Base Docker image with dependencies customized to build and run:
 ##   https://github.com/daneschi/berkeleytutorial
