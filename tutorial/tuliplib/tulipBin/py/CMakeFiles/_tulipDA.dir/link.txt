@@ -1,0 +1,1 @@
+/usr/bin/mpicxx  -fPIC   -shared  -o _tulipDA.so CMakeFiles/_tulipDA.dir/tulipDAPYTHON_wrap.cxx.o ../lib/libtulip.a -lpython3.5m -larmadillo 
