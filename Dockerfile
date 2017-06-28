@@ -1,12 +1,20 @@
 FROM ubuntu:16.04
 
-## Base Docker image with dependencies installed to build and run:
-##   https://github.com/daneschi/berkeleytutorial
-##   https://bitbucket.org/danschi/tuliplib
+MAINTAINER Aaron Culich / Berkeley Research Computing <brc+aculich@berkeley.edu>
 
-RUN apt-get update
-RUN apt-get install --yes libarmadillo-dev libboost-all-dev swig doxygen python-breathe python-pip mpich cmake
-RUN pip install sphinxcontrib-bibtex
+## Please feel free to contact us at Berkeley Research Computing (BRC) if you
+## have questions or if you want dedicated computational infrastructure if
+## http://beta.mybinder.org/ does not provide enough power for your use by your
+## own research or workshop.
+##
+##   http://research-it.berkeley.edu/brc
+##   http://research-it.berkeley.edu/services/cloud-computing-support
+##
+## Contact: Aaron Culich <brc+aculich@berkeley.edu>
+
+
+## Jupyter notebook setup derived from:
+##   https://github.com/data-8/singleuser-data8/blob/master/Dockerfile
 
 ENV APP_DIR /srv/app
 ENV PATH ${APP_DIR}/venv/bin:$PATH
@@ -16,9 +24,11 @@ RUN apt-get update && \
             python \
             python-dev \
             python-pip \
+            python-wheel \
             python3 \
             python3-venv \
             python3-dev \
+            python3-wheel \
             build-essential \
             tar \
             git \
@@ -55,4 +65,37 @@ ADD requirements.txt /tmp/requirements.txt
 RUN pip install --no-cache-dir -r /tmp/requirements.txt
 
 EXPOSE 8888
+USER jovyan
+
+## Base Docker image with dependencies customized to build and run:
+##   https://github.com/daneschi/berkeleytutorial
+##   https://bitbucket.org/danschi/tuliplib
+
+USER root
+
+RUN apt-get update && \
+    apt-get install --yes \
+            libarmadillo-dev \
+            libboost-all-dev \
+            swig \
+            doxygen \
+            python-breathe \
+            python-pip \
+            python-wheel \
+            mpich \
+            cmake \
+            cmake-curses-gui \
+            && \
+    apt-get purge && apt-get clean
+
+RUN pip install sphinxcontrib-bibtex
+
+## Note: Because tuliplib is currently (as of June 2017) a private repo it is
+## built separately and the binaries have been checked into this git repo as
+## of this commit hash: https://bitbucket.org/danschi/tuliplib/src/de4686a
+##
+##     cd tutorial/
+##     git clone https://bitbucket.org/danschi/tuliplib/src/de4686a
+##     mkdir tulipBin ; cd tulipBin ; ccmke ../tuliplib
+
 USER jovyan
