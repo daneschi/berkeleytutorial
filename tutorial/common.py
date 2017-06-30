@@ -1,6 +1,6 @@
 # Import tulip
 import sys
-sys.path.insert(0, '/home/dschiava/Development/CApps/tulipApp/libBin/py')
+sys.path.insert(0, '../tuliplib/tulipBin/py') # path relative to location of the notebook that loads common.py
 import numpy as np
 # Import UQ Library
 import tulipUQ as uq
@@ -23,7 +23,7 @@ def npToStdMat(npMat):
 
 def makeSymmetric(minP,maxP):
   if(len(minP) != len(maxP)):
-    print 'ERROR: Incompatible pVal Extremes.'
+    print ('ERROR: Incompatible pVal Extremes.')
     sys.exit(-1)
   for loopA in range(len(minP)):
     if(np.fabs(maxP[loopA])>np.fabs(minP[loopA])):

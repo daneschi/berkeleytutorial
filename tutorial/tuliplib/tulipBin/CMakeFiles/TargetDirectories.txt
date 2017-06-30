@@ -1,0 +1,11 @@
+/home/jovyan/work/tutorial/tuliplib/tulipBin/CMakeFiles/edit_cache.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/CMakeFiles/rebuild_cache.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/src/CMakeFiles/edit_cache.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/src/CMakeFiles/rebuild_cache.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/src/CMakeFiles/tulip.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/py/CMakeFiles/edit_cache.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/py/CMakeFiles/_tulipUQ.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/py/CMakeFiles/rebuild_cache.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/py/CMakeFiles/_tulipCM.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/py/CMakeFiles/_tulipAC.dir
+/home/jovyan/work/tutorial/tuliplib/tulipBin/py/CMakeFiles/_tulipDA.dir
